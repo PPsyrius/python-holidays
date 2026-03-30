@@ -18,6 +18,7 @@ Thanks a lot for your support.
 First step is setting up the development environment and installing all the required dependencies
 with, once you have [`uv`](https://docs.astral.sh/uv/getting-started/installation/#installation-methods) setup:
 
+<!-- markdownlint-disable MD046 -->
 === "macOS and Linux"
 
     ``` shell
