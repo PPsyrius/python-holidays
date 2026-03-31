@@ -1018,7 +1018,7 @@ any) in brackets, available languages and additional holiday categories. All cou
 <td>Lebanon</td>
 <td>LB</td>
 <td></td>
-<td><strong>ar</strong>, en_US</td>
+<td><strong>ar</strong>, en_US, fr</td>
 <td>BANK, GOVERNMENT</td>
 </tr>
 <tr>
