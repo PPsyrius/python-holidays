@@ -122,7 +122,7 @@ class TestIndia(CommonCountryTests, TestCase):
         )
         self.assertIslamicNoEstimatedHolidayName(name, self.full_range)
 
-    def test_prophets_brithday(self):
+    def test_prophets_birthday(self):
         name = "Milad-un-Nabi"
         self.assertHolidayName(
             name,
