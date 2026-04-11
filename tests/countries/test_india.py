@@ -24,7 +24,7 @@ class TestIndia(CommonCountryTests, TestCase):
         cls.hindu_start_year = 2001
         cls.hindu_end_year = 2035
         cls.hindu_full_range = range(cls.hindu_start_year, cls.hindu_end_year + 1)
-        super().setUpClass(India)
+        super().setUpClass(India, with_subdiv_categories=True)
 
     def setUp(self):
         super().setUp()
