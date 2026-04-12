@@ -262,8 +262,8 @@ any) in brackets, available languages and additional holiday categories. All cou
 <td>Austria</td>
 <td>AT</td>
 <td>States: 1 (Burgenland, Bgld, B), 2 (Kärnten, Ktn, K), 3 (Niederösterreich, NÖ, N), 4 (Oberösterreich, OÖ, O), 5 (Salzburg, Sbg, S), 6 (Steiermark, Stmk, St), 7 (Tirol, T), 8 (Vorarlberg, Vbg, V), 9 (Wien, W)</td>
-<td><strong>de</strong>, en_US, uk</td>
-<td>BANK</td>
+<td><strong>de</strong>, en_US, th, uk</td>
+<td>BANK, PROTESTANT</td>
 </tr>
 <tr>
 <td>Azerbaijan</td>
@@ -553,7 +553,7 @@ any) in brackets, available languages and additional holiday categories. All cou
 <td></td>
 </tr>
 <tr>
-<td>Curacao</td>
+<td>Curaçao</td>
 <td>CW</td>
 <td></td>
 <td>en_US, nl, <strong>pap_CW</strong>, uk</td>
