@@ -20,7 +20,7 @@ from tests.common import CommonCountryTests
 class TestIndia(CommonCountryTests, TestCase):
     @classmethod
     def setUpClass(cls):
-        warnings.simplefilter("ignore")
+        warnings.simplefilter("ignore", category=UserWarning)
         cls.hindu_start_year = 2001
         cls.hindu_end_year = 2035
         cls.hindu_full_range = range(cls.hindu_start_year, cls.hindu_end_year + 1)
@@ -28,7 +28,7 @@ class TestIndia(CommonCountryTests, TestCase):
 
     def setUp(self):
         super().setUp()
-        warnings.simplefilter("ignore")
+        warnings.simplefilter("ignore", category=DeprecationWarning)
 
     def test_subdiv_deprecation(self):
         self.assertDeprecatedSubdivisions("This subdivision is deprecated and will be removed")
@@ -184,10 +184,11 @@ class TestIndia(CommonCountryTests, TestCase):
             )
             self.assertHolidayName(name, self.full_range)
         """
-        warnings.simplefilter("always")
-        for year in (self.hindu_start_year - 1, self.hindu_end_year + 1):  # type: ignore[attr-defined]
-            with self.assertWarns(Warning):
-                India(years=year)
+        with warnings.catch_warnings():
+            warnings.simplefilter("default", UserWarning)
+            for year in (self.hindu_start_year - 1, self.hindu_end_year + 1):  # type: ignore[attr-defined]
+                with self.assertWarns(UserWarning):
+                    India(years=year)
 
         if category_optional is False and subdivs is None:
             self.assertHolidayName(name, dts)  # type: ignore[attr-defined]

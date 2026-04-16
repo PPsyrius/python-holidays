@@ -199,7 +199,7 @@ class India(
         # Hindu Holidays.
         if self._year < 2001 or self._year > 2035:
             warning_msg = "Requested Holidays are available only from 2001 to 2035."
-            warnings.warn(warning_msg, Warning)
+            warnings.warn(warning_msg, UserWarning)
 
         # Buddha Purnima.
         self._add_buddha_purnima(tr("Buddha Purnima"))
