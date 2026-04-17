@@ -46,6 +46,16 @@ class TestIndia(CommonCountryTests, TestCase):
                 India(subdiv=subdiv2, years=2023).keys(),
             )
 
+    def test_hindu_calendar_out_of_range_warning(self):
+        with warnings.catch_warnings():
+            warnings.simplefilter("default", UserWarning)
+            for year in (
+                *range(self.start_year, self.hindu_start_year),
+                *range(self.hindu_end_year + 1, self.end_year),
+            ):
+                with self.assertWarns(UserWarning):
+                    India(years=year)
+
     def test_republic_day(self):
         name = "Republic Day"
         self.assertHolidayName(name, (f"{year}-01-26" for year in range(1950, self.end_year)))
@@ -186,12 +196,6 @@ class TestIndia(CommonCountryTests, TestCase):
             )
             self.assertHolidayName(name, self.full_range)
         """
-        with warnings.catch_warnings():
-            warnings.simplefilter("default", UserWarning)
-            for year in (self.hindu_start_year - 1, self.hindu_end_year + 1):
-                with self.assertWarns(UserWarning):
-                    India(years=year)
-
         if category_optional is False and subdivs is None:
             self.assertHolidayName(name, dts)
             self.assertHolidayName(name, self.hindu_full_range)
